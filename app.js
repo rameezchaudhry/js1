@@ -673,24 +673,34 @@ document.write("Score of " + student[2] +" is " +studentMarks[2]+". Percentage :
 
 //Q9
 var colorNames = [];
-var i = 0;
-colorNames[i++] = prompt("Enter color name add in begining of array");
-document.write("Color name in begining of array : " + colorNames[0] + "<br>");
+//a
+var i=0;
+colorNames[i] = prompt("Enter color name add in begining of array");
+document.write("Color name in begining of array : " + colorNames[i] + "<br>");
+//b
 colorNames.push( prompt("Enter color name add in end of array"));
 var endofarray = colorNames.length-1;
 document.write("Color name in end of array : " + colorNames[endofarray] + "<br>");
-colorNames[i++] = prompt("Enter color name add in begining of array");
-colorNames[i++] = prompt("Enter color name add in begining of array");
+ //c
+colorNames.unshift(prompt("Enter color name add in begining of array"),prompt("Enter color name add in begining of array"))
 for(j=0;j<colorNames.length;j++)
 {
 document.write("Color name in index"+j+"  of array : " + colorNames[j] + "<br>");
 }
+//d
 colorNames.shift();
+for(j=0;j<colorNames.length;j++)
+{
+document.write("Color name in index"+j+"  of array  after delete of first: " + colorNames[j] + "<br>");
+}
+
+//e
+colorNames.pop();
 for(j=0;j<colorNames.length;j++)
 {
 document.write("Color name in index"+j+"  of array  after delete of last: " + colorNames[j] + "<br>");
 }
-
+//f
 var colorNamesAdd =+prompt("Enter Index number in which Color name want to add","enter Index number");
 colorNames[colorNamesAdd] = prompt("Enter Color name want to add in desired index","Enter Color name");
 
@@ -699,8 +709,11 @@ for(j=0;j<colorNames.length;j++)
 document.write("Color name in index"+j+"  of array  after add desired index " + colorNames[j] + "<br>");
 }
 
+//g
+
 var deleteColor =+prompt("enter index number which you  want to delete ") ;
-delete colorNames[deleteColor];
+var deleteColorqty =+prompt("enter how many color you  want to delete ") ;
+colorNames.splice(deleteColor,deleteColorqty)
 for(j=0;j<colorNames.length;j++)
 {
 document.write("Color name in index"+ j +"  of array  after delete desired index " + colorNames[j] + "<br>");
